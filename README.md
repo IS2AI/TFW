@@ -69,7 +69,7 @@ $ cd yolov5-face
 3. Copy our `yolov5face_thermalface.yaml` file into `/yolov5-face/data` and update paths to the training, validation, and test sets.
 4. Start the training on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
 ```
-python train.py --data data/yolov5_thermalface.yaml  --cfg models/yolov5s.yaml --weights ‘pretrained weights’ --batch-size 64 --epochs 250 --img-size 800 
+python train.py --data data/yolov5face_thermalface.yaml  --cfg models/yolov5s.yaml --weights ‘pretrained weights’ --batch-size 64 --epochs 250 --img-size 800 
 ```
 
 ## Pre-trained YOLOv5 and YOLO5Face thermal facec detection models
