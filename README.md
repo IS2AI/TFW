@@ -1,7 +1,7 @@
 # TFW: Annotated Thermal Faces in the Wild Dataset
-The dataset contains thermal images acquired in indoor (controlled) and outdoor (uncontrolled) environments. The indoor dataset was constructed using our previously  published [SpeakingFaces dataset](https://github.com/IS2AI/SpeakingFaces). The outdoor dataset was collected using the same FLIR T540 thermal camera with a resolution of 464x348 pixels, a wave-band of 7.5–14 μm, the field of view 24, and an iron colour palette. The dataset was manually annotated with face bounding boxes and five point facial landmarks (the centre of the right eye, the centre of the left eye, the tip of the nose, the right outer corner of the mouth, the left outer corner of the mouth).
+The dataset contains thermal images acquired in `indoor` (controlled) and `outdoor` (uncontrolled) environments. The indoor dataset was constructed using our previously  published [SpeakingFaces dataset](https://github.com/IS2AI/SpeakingFaces). The outdoor dataset was collected using the same FLIR T540 thermal camera with a resolution of 464x348 pixels, a wave-band of 7.5–14 μm, the field of view 24, and an iron colour palette. The dataset was manually annotated with face bounding boxes and five point facial landmarks (the centre of the right eye, the centre of the left eye, the tip of the nose, the right outer corner of the mouth, the left outer corner of the mouth).
 
-| Environment  | # subjects | # images | # labelled faces | 
+| Environment  | # unique subjects | # images | # labelled faces | 
 |  ---:| :---: | :---: | :---: | 
 | Indoor  | 142  | 5,112  | 5,112  |
 | Outdoor  | 15  | 4,090  | 8,950  |
@@ -11,33 +11,66 @@ Examples of annotated images:
 
 <img src="https://github.com/IS2AI/TFW/blob/main/figures/example.png">
 
-## Setup and Requirements
+## Dowloading the repository:
+```
+$ git clone https://github.com/IS2AI/TFW.git
+```
 
 ## Downloading the dataset 
-The dataset can be downloaded after signing a consent form.
+Please sign a consent form to download the dataset.
 
 ## Data visualization 
 - To visualize the `outdoor` dataset:
 ```
-python visualize_dataset.py --dataset dataset/TFW/train/ --set outdoor
+python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/train/ --set outdoor
 ```
 ```
-python visualize_dataset.py --dataset dataset/TFW/test/ --set outdoor
+python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/test/ --set outdoor
 ```
 ```
-python visualize_dataset.py --dataset dataset/TFW/val/ --set outdoor
+python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/val/ --set outdoor
 ```
 - To visualize the `indoor` dataset:
 ```
-python visualize_dataset.py --dataset dataset/TFW/train/ --set indoor
+python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/train/ --set indoor
 ```
 ```
-python visualize_dataset.py --dataset dataset/TFW/test/ --set indoor
+python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/test/ --set indoor
 ```
 ```
-python visualize_dataset.py --dataset dataset/TFW/val/ --set indoor
+python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/val/ --set indoor
 ```
 ## Training
+To train the [YOLOv5](https://github.com/ultralytics/yolov5) models on our TFW dataset: 
+1. Download the YOLOv5 repository and install the necessary packages:
+```
+$ git clone https://github.com/ultralytics/yolov5
+$ cd yolov5
+$ pip install -r requirements.txt
+```
+2. Download the latest models:
+``` 
+import torch
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # or yolov5m, yolov5l, yolov5x, custom
+```
+3. Copy our `yolov5_thermalface.yaml` file into `/yolov5/data` and update paths to the training, validation, and test sets.
+4. Start the training on the TFW dataset:
+```
+python train.py --data data/yolov5_thermalface.yaml  --cfg ‘models/yolov5s.yaml’ --weights ‘pretrained weights’ --batch-size 64 --epochs 250 --img-size 800 
+```
+
+To train the [YOLO5Face](https://github.com/deepcam-cn/yolov5-face) models on our TFW dataset:
+1. Download the YOLO5Face repository:
+```
+$ git clone https://github.com/deepcam-cn/yolov5-face.git
+$ cd yolov5-face
+```
+2. If you haven't installed the necessary packages for the `YOLOv5` in the previous step, please install them.
+3. Copy our `yolov5face_thermalface.yaml` file into `/yolov5-face/data` and update paths to the training, validation, and test sets.
+4. Start the training on the TFW dataset:
+```
+python train.py --data data/yolov5_thermalface.yaml  --cfg ‘models/yolov5s.yaml’ --weights ‘pretrained weights’ --batch-size 64 --epochs 250 --img-size 800 
+```
 
 ## Pre-trained YOLOv5 and YOLO5Face models
 | Model  | Backbone | Indoor<br>AP<sub>50 | Outdoor<br>AP<sub>50 | Speed (ms)<br>V100 b1|Params(M)|Flops(G)<br>512x384|
@@ -59,3 +92,19 @@ python visualize_dataset.py --dataset dataset/TFW/val/ --set indoor
 | [YOLOv5l-Face](https://drive.google.com/file/d/1bS_7ZTYDa6KJH1d6oLSZnumIfJU55ZMH/view?usp=sharing) | CSPNet  | 100  | 91.9 | 13.57 | 46.59 | 25.59|
 | [YOLOv5l6-Face](https://drive.google.com/file/d/193sqIhipesvrcg1YN9G3_jSdFbjw4eJp/view?usp=sharing)| CSPNet  | 100  | 93.2 | 17.29 | 76.67 | 113.2| 
 
+To use the pre-trained `YOLOv5` models:
+  1. Download the pre-trained models from [Google Drive](https://drive.google.com/drive/folders/1W3UXstwJwyIBOJ4wfOgh4zW2G8qkqFzm?usp=sharing) and unzip inside the `yolov5` repository folder.
+  2. Copy the `yolov5_tfw.ipynb` notebook into the `yolov5` repostiory folder.
+  3. Open the notebook and run cells.
+  
+<img src="https://github.com/IS2AI/TFW/blob/main/figures/yolov5.png">  
+
+To use the pre-trained `YOLO5Face` models:
+  1. Download the pre-trained models from [Google Drive](https://drive.google.com/drive/folders/1FgtfBqMsydm7TugHFze9Bzd7Xc9kjOUp?usp=sharing) and unzip inside the `yolov5-face` repository folder.
+  2. Copy the `yolo5face_tfw.ipynb` notebook into the `yolov5-face` repostiory folder.
+  3. Open the notebook and run cells.
+  
+<img src="https://github.com/IS2AI/TFW/blob/main/figures/yolov5_face.png">  
+  
+## Demo
+  <img src="https://github.com/IS2AI/TFW/blob/main/figures/demo.gif">  
