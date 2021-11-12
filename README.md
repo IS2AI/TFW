@@ -108,3 +108,17 @@ To use the pre-trained `YOLO5Face` models:
   
 ## Demo
   <img src="https://github.com/IS2AI/TFW/blob/main/figures/demo.gif">  
+  
+## In case of using our dataset and/or pre-trained models, please cite our work:
+  ```
+  @misc{https://doi.org/10.48333/s13m-ca44,
+  doi = {10.48333/S13M-CA44},
+  url = {https://github.com/IS2AI/TFW},
+  author = {Kuzdeuov, Askat and Aubakirova, Dana and Koishigarina, Darina and Varol, Huseyin Atakan},
+  keywords = {FOS: Computer and information sciences},
+  language = {en},
+  title = {TFW: Annotated Thermal Faces in the Wild Dataset},
+  publisher = {Institute of Smart Systems and Artificial Intelligence},
+  year = {2021}
+}
+  ```
