@@ -53,7 +53,7 @@ $ pip install -r requirements.txt
 import torch
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # or yolov5m, yolov5l, yolov5x, custom
 ```
-3. Copy our `yolov5_thermalface.yaml` file into `/yolov5/data` and update paths to the training, validation, and test sets.
+3. Copy our `yolov5_thermalface.yaml` file into `/yolov5/data` and update paths to the training and validation sets.
 4. Start the training on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
 ```
 python train.py --data data/yolov5_thermalface.yaml  --cfg models/yolov5s.yaml --weights ‘pretrained weights’ --batch-size 64 --epochs 250 --img-size 800 
@@ -66,7 +66,7 @@ $ git clone https://github.com/deepcam-cn/yolov5-face.git
 $ cd yolov5-face
 ```
 2. If you haven't installed the necessary packages for the `YOLOv5` in the previous step, please install them.
-3. Copy our `yolov5face_thermalface.yaml` file into `/yolov5-face/data` and update paths to the training, validation, and test sets.
+3. Copy our `yolov5face_thermalface.yaml` file into `/yolov5-face/data` and update paths to the training and validation sets.
 4. Start the training on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
 ```
 python train.py --data data/yolov5face_thermalface.yaml  --cfg models/yolov5s.yaml --weights ‘pretrained weights’ --batch-size 64 --epochs 250 --img-size 800 
