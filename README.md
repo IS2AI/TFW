@@ -72,7 +72,7 @@ $ cd yolov5-face
 python train.py --data data/yolov5face_thermalface.yaml  --cfg models/yolov5s.yaml --weights 'pretrained weights' --batch-size 64 --epochs 250 --img-size 800 
 ```
 
-## Pre-trained YOLOv5 and YOLO5Face thermal facec detection models
+## Pre-trained YOLOv5 and YOLO5Face thermal face detection models
 | Model  | Backbone | Indoor<br>AP<sub>50 | Outdoor<br>AP<sub>50 | Speed (ms)<br>V100 b1|Params(M)|Flops(G)<br>512x384|
 |  ---:| :---: | :---: | :---: | :---: | :---: | :---: | 
 | [YOLOv5n](https://drive.google.com/file/d/1liLw59L1L56VJn7KQAHpWMIEuXdN62Yp/view?usp=sharing) | CSPNet  | 100  | 92.9 | 6.16  | 1.76  | 0.99 |  
