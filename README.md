@@ -17,7 +17,7 @@ $ git clone https://github.com/IS2AI/TFW.git
 ```
 
 ## Downloading the dataset 
-Please sign a consent form to download the dataset.
+Please sign a consent form to download the dataset. **!!!THE LINK WILL BE PROVIDED SOON HERE!!!**
 
 ## Data visualization 
 - To visualize the `outdoor` dataset:
