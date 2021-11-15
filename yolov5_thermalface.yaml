@@ -9,8 +9,8 @@
 # download command/URL (optional)
 
 # train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
-train: /workspace/data/yolov5_dataset/train/images/ 
-val:  /workspace/data/yolov5_dataset/val/images/  
+train: /workspace/dataset/YOLOv5/train/images/ 
+val:  /workspace/dataset/YOLOv5/val/images/  
 
 
 # number of classes
