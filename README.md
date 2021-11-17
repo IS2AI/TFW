@@ -11,6 +11,9 @@ Examples of annotated images:
 
 <img src="https://github.com/IS2AI/TFW/blob/main/figures/example.png">
 
+## Preprint
+[TFW: Annotated Thermal Faces in the Wild Dataset](https://www.techrxiv.org/articles/preprint/TFW_Annotated_Thermal_Faces_in_the_Wild_Dataset/17004538)
+
 ## Dowloading the repository:
 ```
 $ git clone https://github.com/IS2AI/TFW.git
@@ -111,15 +114,13 @@ To use the pre-trained `YOLO5Face` models:
   
 ## In case of using our dataset and/or pre-trained models, please cite our work:
   ```
-  @misc{https://doi.org/10.48333/s13m-ca44,
-  doi = {10.48333/S13M-CA44},
-  url = {https://github.com/IS2AI/TFW},
-  author = {Kuzdeuov, Askat and Aubakirova, Dana and Koishigarina, Darina and Varol, Huseyin Atakan},
-  keywords = {FOS: Computer and information sciences},
-  language = {en},
-  title = {TFW: Annotated Thermal Faces in the Wild Dataset},
-  publisher = {Institute of Smart Systems and Artificial Intelligence},
-  year = {2021}
+@article{Kuzdeuov2021,
+author = "Askat Kuzdeuov and Dana Aubakirova and Darina Koishigarina and Hüseyin Atakan Varol",
+title = "{TFW: Annotated Thermal Faces in the Wild Dataset}",
+year = "2021",
+month = "11",
+url = "https://www.techrxiv.org/articles/preprint/TFW_Annotated_Thermal_Faces_in_the_Wild_Dataset/17004538",
+doi = "10.36227/techrxiv.17004538.v1"
 }
   ```
   
