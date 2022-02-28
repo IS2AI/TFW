@@ -16,10 +16,10 @@ args = vars(ap.parse_args())
 if args["set"] == "indoor":
 	width = 3 
 else:
-	width = 1
+	width = 2
 
 # import labels as a numpy array
-labels = pd.read_csv(os.path.join(args["dataset"], "{}_labels.csv".format(args["set"]))).to_numpy()
+labels = pd.read_csv(os.path.join(args["dataset"], "{}.csv".format(args["set"]))).to_numpy()
 
 # initialize iterators
 iter1 = 0 
@@ -35,6 +35,8 @@ while iter1 < len(labels):
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	gray = np.dstack([gray] * 3)
 
+	print("[INFO] Processing image:", imageName)
+
 	# loop over the labels of this image
 	while labels[iter1][0] == labels[iter2][0]:
 		# extract coordinates of the bounding box and five facial landmarks
@@ -43,10 +45,10 @@ while iter1 < len(labels):
 		# draw the bounding box and facial landmarks 
 		cv2.rectangle(gray, (xs, ys), (xe, ye), (0, 255, 0), width)
 		cv2.circle(gray, (p1x, p1y), width, (0, 0, 255), -1)
-		cv2.circle(gray, (p2x, p2y), width, (0, 0, 255), -1)
-		cv2.circle(gray, (p3x, p3y), width, (0, 0, 255), -1)
-		cv2.circle(gray, (p4x, p4y), width, (0, 0, 255), -1)
-		cv2.circle(gray, (p5x, p5y), width, (0, 0, 255), -1)
+		cv2.circle(gray, (p2x, p2y), width, (255, 0, 0), -1)
+		cv2.circle(gray, (p3x, p3y), width, (0, 255, 255), -1)
+		cv2.circle(gray, (p4x, p4y), width, (255, 0, 255), -1)
+		cv2.circle(gray, (p5x, p5y), width, (255, 255, 0), -1)
 
 		iter2 += 1
 
@@ -57,6 +59,8 @@ while iter1 < len(labels):
 
 	# equalize iterators
 	iter1 = iter2
+
+	#cv2.imwrite("labelled_outdoor.png", gray)
 
 	# show the image
 	cv2.imshow("Image", gray)
