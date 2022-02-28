@@ -24,7 +24,7 @@ $ git clone https://github.com/IS2AI/TFW.git
 ```
 
 ## Downloading the dataset 
-Please sign [a consent form](https://issai.nu.edu.kz/tfw-annotated-thermal-faces-in-the-wild-dataset/) to download the dataset. 
+You can download the dataset directly from [Google Drive](https://drive.google.com/file/d/1q8jfnDdCe3e-YOnoL5PIpSlkt0vamPMV/view?usp=sharing) or send a [request](https://issai.nu.edu.kz/tfw-annotated-thermal-faces-in-the-wild-dataset/) to get the access to our server. 
 
 ## Data visualization 
 - To visualize the `outdoor` dataset:
