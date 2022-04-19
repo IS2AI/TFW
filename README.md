@@ -48,7 +48,8 @@ python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/test/ --set indoor
 python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/val/ --set indoor
 ```
 ## Training
-To train the [YOLOv5](https://github.com/ultralytics/yolov5) models on our TFW dataset: 
+First, convert the dataset to the yolo format using the `dataset2yolo.ipynb` notebook.
+Then, follow these steps to train the [YOLOv5](https://github.com/ultralytics/yolov5) models on our TFW dataset: 
 1. Download the YOLOv5 repository and install the necessary packages:
 ```
 $ git clone https://github.com/ultralytics/yolov5
@@ -73,10 +74,10 @@ $ git clone https://github.com/deepcam-cn/yolov5-face.git
 $ cd yolov5-face
 ```
 2. If you haven't installed the necessary packages for the `YOLOv5` in the previous step, please install them.
-3. Copy our `yolo5face_tfw.yaml` file into `/yolov5-face/data` and update paths to the training and validation sets.
+3. Copy our `yolov5_tfw.yaml` file into `/yolov5-face/data` and update paths to the training and validation sets.
 4. Start the training on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
 ```
-python train.py --data data/yolo5face_tfw.yaml  --cfg models/yolov5s.yaml --weights 'pretrained weights' --batch-size 64 --epochs 250 --img-size 800 
+python train.py --data data/yolov5_tfw.yaml  --cfg models/yolov5s.yaml --weights 'pretrained weights' --batch-size 64 --epochs 250 --img-size 800 
 ```
 
 ## Pre-trained YOLOv5 and YOLO5Face thermal face detection models
