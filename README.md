@@ -127,18 +127,3 @@ url = "https://www.techrxiv.org/articles/preprint/TFW_Annotated_Thermal_Faces_in
 doi = "10.36227/techrxiv.17004538.v1"
 }
   ```
-  
-  ```
-  @Article{s21103465,
- AUTHOR = {Abdrakhmanova, Madina and Kuzdeuov, Askat and Jarju, Sheikh and Khassanov, Yerbolat and Lewis, Michael and Varol, Huseyin Atakan},
- TITLE = {SpeakingFaces: A Large-Scale Multimodal Dataset of Voice Commands with Visual and Thermal Video Streams},
- JOURNAL = {Sensors},
- VOLUME = {21},
- YEAR = {2021},
- NUMBER = {10},
- ARTICLE-NUMBER = {3465},
- URL = {https://www.mdpi.com/1424-8220/21/10/3465},
- ISSN = {1424-8220},
- DOI = {10.3390/s21103465}
-}
-```
