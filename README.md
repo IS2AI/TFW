@@ -1,12 +1,12 @@
 # TFW: Annotated Thermal Faces in the Wild Dataset
 The dataset contains thermal images acquired in a  controlled indoor (`c-indoor`), semi-controlled indoor (`s-indoor`), and uncontrolled outdoor (`u-outdoor`) environments. The `c-indoor` dataset was constructed using our previously  published [SpeakingFaces dataset](https://github.com/IS2AI/SpeakingFaces). The `s-indoor` and `u-outdoor` datasets were collected using the same FLIR T540 thermal camera with a resolution of 464x348 pixels, a wave-band of 7.5–14 μm, the field of view 24, and an iron color palette. The dataset was manually annotated with face bounding boxes and five point facial landmarks (the center of the right eye, the center of the left eye, the tip of the nose, the right outer corner of the mouth, the left outer corner of the mouth).
 
-| Environment  | Subjects | Images | Labeled faces | 
-|  ---:| :---: | :---: | :---: | 
-| c-indoor  | 142  | 5,112  | 5,112  |
-| s-indoor  | 9  | 780  | 1,748  |
-| u-outdoor  | 15  | 4,090  | 9,649  |
-| combined  | 147  | 9,982  | 16,509  |
+| Environment  | Subjects | Images | Labeled faces | Visual pair|
+|  ---:| :---: | :---: | :---: | :---: | 
+| c-indoor  | 142  | 5,112  | 5,112  | yes |
+| s-indoor  | 9  | 780  | 1,748  | yes |
+| u-outdoor  | 15  | 4,090  | 9,649  | no |
+| combined  | 147  | 9,982  | 16,509  | yes & no |
 
 Examples of annotated images:
 
