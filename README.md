@@ -16,7 +16,7 @@ Examples of annotated images:
 [TFW: Annotated Thermal Faces in the Wild Dataset](https://www.techrxiv.org/articles/preprint/TFW_Annotated_Thermal_Faces_in_the_Wild_Dataset/17004538)
 
 ## Video on YouTube
-[TFW: Annotated Thermal Faces in the Wild Dataset](https://www.youtube.com/watch?v=YWCy_WmFNW0)
+[TFW: Annotated Thermal Faces in the Wild Dataset](https://www.youtube.com/watch?v=QgXi3rLv1jM)
 
 ## Dowloading the repository:
 ```
