@@ -119,12 +119,14 @@ To use the pre-trained `YOLO5Face` models:
   
 ## In case of using our dataset and/or pre-trained models, please cite our work:
   ```
-@article{Kuzdeuov2022,
-author = "Askat Kuzdeuov and Dana Aubakirova and Darina Koishigarina and Hüseyin Atakan Varol",
-title = "{TFW: Annotated Thermal Faces in the Wild Dataset}",
-year = "2022",
-month = "5",
-url = "https://www.techrxiv.org/articles/preprint/TFW_Annotated_Thermal_Faces_in_the_Wild_Dataset/17004538",
-doi = "10.36227/techrxiv.17004538.v3"
+@ARTICLE{9781417,  
+author={Kuzdeuov, Askat and Aubakirova, Dana and Koishigarina, Darina and Varol, Huseyin Atakan},  
+journal={IEEE Transactions on Information Forensics and Security},   
+title={TFW: Annotated Thermal Faces in the Wild Dataset},
+year={2022},
+volume={},  
+number={},  
+pages={1-1}, 
+doi={10.1109/TIFS.2022.3177949}}
 }
   ```
