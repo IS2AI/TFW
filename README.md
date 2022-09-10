@@ -50,34 +50,28 @@ python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/test/ --set indoor
 python visualize_dataset.py --dataset PATH_TO_DATASET/TFW/val/ --set indoor
 ```
 ## Training
-First, convert the dataset to the yolo format using the `dataset2yolo.ipynb` notebook.
-Then, follow these steps to train the [YOLOv5](https://github.com/ultralytics/yolov5) models on our TFW dataset: 
-1. Download the YOLOv5 repository and install the necessary packages:
+First, convert the TFW dataset to a yolo format using the `dataset2yolo.ipynb` notebook.
+Then, follow these steps to train the [YOLOv5](https://github.com/ultralytics/yolov5) models on the TFW dataset: 
+1. Clone the repository from Github and install necessary packages:
 ```
 $ git clone https://github.com/ultralytics/yolov5
 $ cd yolov5
 $ pip install -r requirements.txt
 ```
-2. Download the latest models:
-``` 
-import torch
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # or yolov5m, yolov5l, yolov5x, custom
-```
-3. Copy our `yolov5_tfw.yaml` file into `/yolov5/data` and update paths to the training and validation sets.
-4. Start the training on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
+2. Copy our `yolov5_tfw.yaml` file into `/yolov5/data` and update paths to the training and validation sets.
+3. Train the model on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
 ```
 python train.py --data data/yolov5_tfw.yaml  --cfg models/yolov5s.yaml --weights 'pretrained weights' --batch-size 64 --epochs 250 --img-size 800 
 ```
 
-To train the [YOLO5Face](https://github.com/deepcam-cn/yolov5-face) models on our TFW dataset:
-1. Download the YOLO5Face repository:
+To train the [YOLO5Face](https://github.com/deepcam-cn/yolov5-face) models on the TFW dataset:
+1. Copy the repository from Github and install necessary packages:
 ```
 $ git clone https://github.com/deepcam-cn/yolov5-face.git
 $ cd yolov5-face
 ```
-2. If you haven't installed the necessary packages for the `YOLOv5` in the previous step, please install them.
-3. Copy our `yolov5_tfw.yaml` file into `/yolov5-face/data` and update paths to the training and validation sets.
-4. Start the training on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
+2. Copy our `yolov5_tfw.yaml` file into `/yolov5-face/data` and update paths to the training and validation sets.
+3. Train the model on the TFW dataset (change the --img_size to 832 for models with the P6 output block):
 ```
 python train.py --data data/yolov5_tfw.yaml  --cfg models/yolov5s.yaml --weights 'pretrained weights' --batch-size 64 --epochs 250 --img-size 800 
 ```
@@ -102,18 +96,23 @@ python train.py --data data/yolov5_tfw.yaml  --cfg models/yolov5s.yaml --weights
 | [YOLOv5l-Face](https://drive.google.com/file/d/1DbWZJ8awdi6QCR1gH5Tn4-tRiY_KCXIP/view?usp=sharing) | CSPNet  | 100  | 96.18 | 13.57 | 46.59 | 25.59|
 | [YOLOv5l6-Face](https://drive.google.com/file/d/1TMoa2GYfMM1ptySmntN7HBPNJG5oMWnP/view?usp=sharing)| CSPNet  | 100  | 95.76 | 17.29 | 76.67 | 113.2| 
 
-To use the pre-trained `YOLOv5` models:
-  1. Download the pre-trained models from [Google Drive](https://drive.google.com/drive/folders/10ToqjavIlk5bj63zV4xgibE1L-jTEzxN?usp=sharing) and unzip inside the `yolov5` repository folder.
-  2. Copy the `yolov5_tfw.ipynb` notebook into the `yolov5` repostiory folder.
-  3. Open the notebook and run cells.
+To use pre-trained `YOLOv5` models:
+  1. Download pre-trained models from [Google Drive](https://drive.google.com/drive/folders/10ToqjavIlk5bj63zV4xgibE1L-jTEzxN?usp=sharing) and unzip them in the `yolov5` repository folder.
+  2. Run `detect.py` on terminal: 
+ ```
+  python detect.py --weights PATH_TO_MODEL --source PATH_TO_IMAGE --img-size 800
+ ```
+  3. The result is saved in `runs/detect/exp`
   
 <img src="https://github.com/IS2AI/TFW/blob/main/figures/yolov5.png">  
 
-To use the pre-trained `YOLO5Face` models:
-  1. Download the pre-trained models from [Google Drive](https://drive.google.com/drive/folders/12ub57wP1hZ4tL2WH7TrUpmbvXXIdi3NU?usp=sharing) and unzip inside the `yolov5-face` repository folder.
-  2. Copy the `yolo5face_tfw.ipynb` notebook into the `yolov5-face` repostiory folder.
-  3. Open the notebook and run cells.
-  
+To use pre-trained `YOLO5Face` models:
+  1. Download pre-trained models from [Google Drive](https://drive.google.com/drive/folders/12ub57wP1hZ4tL2WH7TrUpmbvXXIdi3NU?usp=sharing) and unzip them in the `yolov5-face` repository folder.
+  2. Run `detect_face.py` on terminal:
+   ```
+  python detect_face.py --weights PATH_TO_MODEL --image PATH_TO_IMAGE --img-size 800
+   ```
+  3. The result is saved as `result.jpg` in `./yolov5-face/`
 <img src="https://github.com/IS2AI/TFW/blob/main/figures/yolov5_face.png">  
   
 ## Demo
