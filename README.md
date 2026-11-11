@@ -26,7 +26,7 @@ $ git clone https://github.com/IS2AI/TFW.git
 ```
 
 ## Downloading the dataset 
-You can download the dataset directly from [Google Drive](https://drive.google.com/file/d/1q8jfnDdCe3e-YOnoL5PIpSlkt0vamPMV/view?usp=sharing) or send a [request](https://issai.nu.edu.kz/tfw-annotated-thermal-faces-in-the-wild-dataset/) to get the access to our server. 
+You can download the dataset from [Hugging Face](https://huggingface.co/datasets/issai/TFW). 
 
 ## Data visualization 
 - To visualize the `outdoor` dataset:
@@ -76,38 +76,21 @@ $ cd yolov5-face
 python train.py --data data/yolov5_tfw.yaml  --cfg models/yolov5s.yaml --weights 'pretrained weights' --batch-size 64 --epochs 250 --img-size 800 
 ```
 
-## Pre-trained YOLOv5 and YOLO5Face thermal face detection models
+### Pre-trained YOLO5Face thermal face detection models 
 | Model  | Backbone | c-indoor<br>AP<sub>50 | u-outdoor<br>AP<sub>50 | Speed (ms)<br>V100 b1|Params (M)|Flops (G)<br>@512x384|
 |  ---:| :---: | :---: | :---: | :---: | :---: | :---: | 
-| [YOLOv5n](https://drive.google.com/file/d/1PLUq7WbOWS7Ve2VKW7_WBkC3Uksje8Fx/view?usp=sharing) | CSPNet  | 100  | 97.29 | 6.16  | 1.76  | 0.99 |  
-| [YOLOv5n6](https://drive.google.com/file/d/1wV9t5uH_eiy7WaHdQdWnbeEIijuDAdKI/view?usp=sharing)| CSPNet  | 100  | 95.79 | 8.18  | 3.09  | 1.02 |  
-| [YOLOv5s](https://drive.google.com/file/d/1IdsdR1-qUeRo5EKQJzGQmRDi2SrMXJG5/view?usp=sharing) | CSPNet  | 100  | 96.82 | 7.20  | 7.05  | 3.91 |  
-| [YOLOv5s6](https://drive.google.com/file/d/1YZX3t7cSPnWWoic7oJo86ljBQgE5PPb2/view?usp=sharing)| CSPNet  | 100  | 96.83 | 9.05  | 12.31 | 3.88 |  
-| [YOLOv5m](https://drive.google.com/file/d/16TlHaA28_FBrRT8BuVPuvYp-XTzjRdOC/view?usp=sharing) | CSPNet  | 100  | 97.16 | 9.59  | 21.04 | 12.07|  
-| [YOLOv5m6](https://drive.google.com/file/d/1zK51YBu1Whet7-XahQpdoQyJ8eyBn2pB/view?usp=sharing)| CSPNet  | 100  | 97.10 | 12.11 | 35.25 | 11.76|  
-| [YOLOv5l](https://drive.google.com/file/d/1uBAgzmIMdKVlpO_ky9nGP0mTurRg8ADG/view?usp=sharing) | CSPNet  | 100  | 96.68 | 12.39 | 46.60 | 27.38|  
-| [YOLOv5l6](https://drive.google.com/file/d/16MiFjGA_RAKDQ4U25kuz8LUqTmDn0uIq/view?usp=sharing)| CSPNet  | 100  | 96.29 | 15.73 | 76.16 | 110.2| 
-| [YOLOv5n-Face](https://drive.google.com/file/d/1vXk9P3CfhUtRBGI44SqWbuiTJ7rAI4hP/view?usp=sharing) |ShuffleNetv2| 100  | 95.93 | 10.12 | 1.72 |1.36|  
-| [YOLOv5n6-Face](https://drive.google.com/file/d/1B7JQkNBg598HAeL80rKV712Gy-iPnGn2/view?usp=sharing)|ShuffleNetv2| 100  | 95.59 | 13.30 | 2.54 |1.38|  
-| [YOLOv5s-Face](https://drive.google.com/file/d/1mBg-nV94fDLaWJK1q9dMEaykRmLjMN4o/view?usp=sharing) | CSPNet  | 100  | 96.73 | 8.29  | 7.06  | 3.67 |  
-| [YOLOv5s6-Face](https://drive.google.com/file/d/16v3Kb5omSai0pBiJv4ZoL2y5gFWloswt/view?usp=sharing)| CSPNet  | 100  | 96.36 | 10.86 | 12.37 | 3.75 |  
-| [YOLOv5m-Face](https://drive.google.com/file/d/1x7fQWvlLJiH4ZoeQHNtG5MZQrPTEoCbq/view?usp=sharing) | CSPNet  | 100  | 95.32 | 11.01 | 21.04 | 11.58|  
-| [YOLOv5m6-Face](https://drive.google.com/file/d/10JWlXAWDjBBWODxF3U3bLCLe-3-mmMsm/view?usp=sharing)| CSPNet  | 100  | 96.32 | 13.97 | 35.45 | 11.84|
-| [YOLOv5l-Face](https://drive.google.com/file/d/1DbWZJ8awdi6QCR1gH5Tn4-tRiY_KCXIP/view?usp=sharing) | CSPNet  | 100  | 96.18 | 13.57 | 46.59 | 25.59|
-| [YOLOv5l6-Face](https://drive.google.com/file/d/1TMoa2GYfMM1ptySmntN7HBPNJG5oMWnP/view?usp=sharing)| CSPNet  | 100  | 95.76 | 17.29 | 76.67 | 113.2| 
+| YOLOv5n-Face |ShuffleNetv2| 100  | 95.93 | 10.12 | 1.72 |1.36|  
+| YOLOv5n6-Face|ShuffleNetv2| 100  | 95.59 | 13.30 | 2.54 |1.38|  
+| YOLOv5s-Face | CSPNet  | 100  | 96.73 | 8.29  | 7.06  | 3.67 |  
+| YOLOv5s6-Face| CSPNet  | 100  | 96.36 | 10.86 | 12.37 | 3.75 |  
+| YOLOv5m-Face | CSPNet  | 100  | 95.32 | 11.01 | 21.04 | 11.58|  
+| YOLOv5m6-Face| CSPNet  | 100  | 96.32 | 13.97 | 35.45 | 11.84|
+| YOLOv5l-Face | CSPNet  | 100  | 96.18 | 13.57 | 46.59 | 25.59|
+| YOLOv5l6-Face| CSPNet  | 100  | 95.76 | 17.29 | 76.67 | 113.2| 
 
-To use pre-trained `YOLOv5` models:
-  1. Download pre-trained models from [Google Drive](https://drive.google.com/drive/folders/10ToqjavIlk5bj63zV4xgibE1L-jTEzxN?usp=sharing) and unzip them in the `yolov5` repository folder.
-  2. Run `detect.py` on terminal: 
- ```
-  python detect.py --weights PATH_TO_MODEL --source PATH_TO_IMAGE --img-size 800
- ```
-  3. The result is saved in `runs/detect/exp`
-  
-<img src="https://github.com/IS2AI/TFW/blob/main/figures/yolov5.png">  
 
 To use pre-trained `YOLO5Face` models:
-  1. Download pre-trained models from [Google Drive](https://drive.google.com/drive/folders/12ub57wP1hZ4tL2WH7TrUpmbvXXIdi3NU?usp=sharing) and unzip them in the `yolov5-face` repository folder.
+  1. Download pre-trained models from [Hugging Face](https://huggingface.co/datasets/issai/TFW) and unzip them in the `yolov5-face` repository folder.
   2. Run `detect_face.py` on terminal:
    ```
   python detect_face.py --weights PATH_TO_MODEL --image PATH_TO_IMAGE --img-size 800
